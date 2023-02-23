@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 
-<html>
+<html data-theme="halloween">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Rock, Paper, Scissors</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <!-- Load DaisyUI components -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.0/dist/full.css" rel="stylesheet" type="text/css" />
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+        <!-- Load JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     </head>
 
     <body>
-        <div>
-            <h1>Rock, Paper, Scissors</h1>
-
-            <div>
-                <h2>You</h2>
-
-                <div>
-                    <a>Rock</a>
-                    <a>Paper</a>
-                    <a>Scissors</a>
-                </div>
+        <div class="flex flex-col">
+            <div class="flex justify-center mt-10">
+                <h1 class="text-6xl py-5">Rock, Paper, Scissors</h1>
             </div>
 
-            <div>
-                <h2>Computer</h2>
+            <div class="flex justify-center mt-10 py-6">
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="card bg-neutral">
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title text-3xl py-5">You</h2>
+                            <div class="card-actions justify-center">
+                                <button class="btn btn-primary" id="rock_user">Rock</button>
+                                <button class="btn btn-secondary" id="paper_user">Paper</button>
+                                <button class="btn btn-accent" id="scissors_user">Paper</button>
+                            </div>
+                        </div>
+                    </div>
 
-                <div>
-                    <p>Rock</p>
-                    <p>Paper</p>
-                    <p>Scissors</p>
+                    <div class="card bg-neutral">
+                        <div class="card-body items-center text-center">
+                            <h2 class="card-title text-3xl py-5">Computer</h2>
+                            <p class="text-2xl text-primary invisible" id="rock_cpu">Rock</p>
+                            <p class="text-2xl text-secondary invisible" id="paper_cpu">Paper</p>
+                            <p class="text-2xl text-accent invisible" id="scissors_cpu">Scissors</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </div>  
             
+            <div class="flex justify-center mt-10">
+                <div class="grid grid-cols-2 gap-6">
+                    <h1 class="text-3xl py-5 ">You: <p class="inline-block" id="player_score">0</p></h1>
+                    <h1 class="text-3xl py-5">Computer: <p class="inline-block" id="player_score">0</p></h1>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-10">
+                <h2 class="text-6xl" id="win" hidden>You win!</h2>
+                <h2 class="text-6xl" id="lose" hidden>You lose!</h2>
+            </div>
         </div>
     </body>
+
+    <script src="game.js"></script>
 </html>
